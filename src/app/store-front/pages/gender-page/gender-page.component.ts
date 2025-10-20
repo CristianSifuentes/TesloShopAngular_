@@ -18,10 +18,10 @@ export class GenderPageComponent {
   gender = toSignal(this.route.params.pipe(map(({ gender }) => gender)));
 
   productsResource = rxResource({
-    request: () => ({ gender: this.gender() }),
-    loader: ({ request }) => {
+    params: () => ({ gender: this.gender() }),
+    stream: ({ params }) => {
       return this.productsService.getProducts({
-        gender: request.gender,
+        gender: params.gender,
       });
     },
   });

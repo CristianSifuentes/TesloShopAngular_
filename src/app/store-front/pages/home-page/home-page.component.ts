@@ -15,9 +15,9 @@ export class HomePageComponent {
   productsService = inject(ProductsService);
 
   productsResource = rxResource({
-    request: () => ({}),
-    loader: ({ request }) => {
-      return this.productsService.getProducts({});
+    params: () => ({}),
+    stream: ({ params }) => {
+      return this.productsService.getProducts(params);
     },
   });
 }

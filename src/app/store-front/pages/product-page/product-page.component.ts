@@ -1,7 +1,5 @@
 import { Component, inject } from '@angular/core';
-// import { rxResource } from '@angular/core/rxjs-interop';
-import { resource, type ResourceRef, signal, computed } from '@angular/core';
-
+import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '@products/services/products.service';
 import { ProductCarouselComponent } from '../../../products/components/product-carousel/product-carousel.component';
@@ -18,8 +16,8 @@ export class ProductPageComponent {
   productIdSlug = this.activatedRoute.snapshot.params['idSlug'];
 
   productResource = rxResource({
-    request: () => ({ idSlug: this.productIdSlug }),
-    loader: ({ request }) =>
-      this.productService.getProductByIdSlug(request.idSlug),
+    params: () => ({ idSlug: this.productIdSlug }),
+    stream: ({ params }) =>
+      this.productService.getProductByIdSlug(params.idSlug),
   });
 }
