@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+    /* src/styles.css */
+    @import "tailwindcss";
+
+    @plugin "daisyui" {
+      themes: winter --default, night --prefersdark; /* 'night' is a dark theme */
+    }
+
+    @custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
