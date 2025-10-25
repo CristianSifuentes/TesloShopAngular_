@@ -6,12 +6,12 @@
   class="grid grid-cols-1 sm:grid-cols-2 gap-4"
   (ngSubmit)="onSubmit()"
 >
-  <!-- Datos generales -->
+  <!-- General data -->
   <div class="flex flex-col gap-2">
-    <h2 class="text-2xl font-bold h-12">Datos generales</h2>
+    <h2 class="text-2xl font-bold h-12">General data</h2>
     <input
       type="text"
-      placeholder="Título"
+      placeholder="Title"
       class="input input-bordered w-full"
       formControlName="title"
       [class.border-red-500]="productForm.get('title')?.errors ?? false"
@@ -37,7 +37,7 @@
 
     <form-error-label [control]="productForm.get('description')!" />
 
-    <h2 class="text-lg font-bold">Datos de venta</h2>
+    <h2 class="text-lg font-bold">Sales data</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
       <div>
@@ -138,7 +138,7 @@
       <button class="btn btn-secondary" type="submit">
         <!-- <span class="loading loading-spinner loading-sm"></span> -->
 
-        Guardar
+        Save
       </button>
     </div>
 
@@ -150,7 +150,7 @@
 
 @if (wasSaved()) {
 <div class="alert alert-success fixed bottom-4 right-4 w-80 animate-fadeIn">
-  <span>Datos actualizados correctamente</span>
+  <span>Data updated successfully</span>
 </div>
 
 }
