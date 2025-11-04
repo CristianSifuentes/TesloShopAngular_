@@ -64,3 +64,7 @@ https://tailwindcss.com/docs/installation/framework-guides/angular
 https://fonts.google.com/specimen/Montserrat
 
 https://daisyui.com/components/navbar/
+
+https://www.creative-tim.com/twcomponents/component/dashboard-navigation
+
+https://angular.dev/guide/routing/common-router-tasks#preventing-unauthorized-access
